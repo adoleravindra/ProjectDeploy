@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <form action="/#/" method="post">
+        {% csrf_token %}
+
+        <center><h1>Rocket Launching Control Pannel</h1></center>
+        <input type="hidden" name="name" placeholder="Enter Name">
+        <center> <button type="submit">Start Launching</button></center>
+    </form>
+    <center><img src="{% static 'images/rocket.jpg' %}" height="400px" width="650px " style="margin-top: 5vh"></center>
+{% if msg %}
+    <center>{{ msg }}</center>
+{% endif %}
+</body>
+</html>
